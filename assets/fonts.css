@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Segment';
+    src: url('/assets/fonts/segment-regular/webfonts/segment-regular.eot?#iefix');
+    src: url('/assets/fonts/segment-regular/webfonts/segment-regular.eot?#iefix')
+        format('eot'),
+      url('/assets/fonts/segment-regular/webfonts/segment-regular.woff2')
+        format('woff2'),
+      url('/assets/fonts/segment-regular/webfonts/segment-regular.woff')
+        format('woff'),
+      url('/assets/fonts/segment-regular/webfonts/segment-regular.ttf')
+        format('truetype');
+    font-weight: 400;
+  }
+  
+  @font-face {
+    font-family: 'Segment';
+    src: url('/assets/fonts/segment-semibold/webfonts/segment-semibold.eot?#iefix');
+    src: url('/assets/fonts/segment-semibold/webfonts/segment-semibold.eot?#iefix')
+        format('eot'),
+      url('/assets/fonts/segment-semibold/webfonts/segment-semibold.woff2')
+        format('woff2'),
+      url('/assets/fonts/segment-semibold/webfonts/segment-semibold.woff')
+        format('woff'),
+      url('/assets/fonts/segment-semibold/webfonts/segment-semibold.ttf')
+        format('truetype');
+    font-weight: 500;
+  }
+  
+  @font-face {
+    font-family: 'Segment';
+    src: url('/assets/fonts/segment-bold/webfonts/segment-bold.eot?#iefix');
+    src: url('/assets/fonts/segment-bold/webfonts/segment-bold.eot?#iefix')
+        format('eot'),
+      url('/assets/fonts/segment-bold/webfonts/segment-bold.woff2')
+        format('woff2'),
+      url('/assets/fonts/segment-bold/webfonts/segment-bold.woff') format('woff'),
+      url('/assets/fonts/segment-bold/webfonts/segment-bold.ttf')
+        format('truetype');
+    font-weight: 700;
+  }
+  
