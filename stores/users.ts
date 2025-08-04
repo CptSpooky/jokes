@@ -24,7 +24,6 @@ export const useUsersStore = defineStore('users', {
         const { results }: { results: RawUser[] } = await experienceApi.get('/?results=10');
         const users: User[] = results.map((user: RawUser) => new User(user));
         this.users = users;
-        console.log('Fetched users:', users);
       } catch (error: any) {
         this.errorMessage = this.errorMessage = error?.message ?? 'Something went wrong';
         console.error('Error fetching users:', error);
