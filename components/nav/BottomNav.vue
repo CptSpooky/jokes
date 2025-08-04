@@ -1,5 +1,5 @@
 <template>
-  <v-bottom-navigation v-model="value" color="primary" active>
+  <v-bottom-navigation v-model="routeIndex" color="primary" active>
     <v-btn @click="router.push('/')">
       <v-icon>mdi-emoticon-happy-outline</v-icon>
       Jokes
@@ -15,11 +15,11 @@
 import { ref, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 
-const value = ref(0)
+const routeIndex = ref(0)
 const router = useRouter()
 const route = useRoute()
 
-const routeToIndex = {
+const routeToIndex: Record<string, number> = {
   '/': 0,
   '/users': 1,
 }
@@ -27,7 +27,7 @@ const routeToIndex = {
 watch(
   () => route.path,
   (path) => {
-    value.value = routeToIndex[path] ?? 0
+    routeIndex.value = routeToIndex[path] ?? 0
   },
   { immediate: true }
 )
