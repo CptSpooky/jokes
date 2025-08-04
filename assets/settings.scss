@@ -1,4 +1,2 @@
-@use 'vuetify' with (
-    $body-font-family: 'Segment'
-);
+@use 'vuetify' with ($body-font-family: 'Segment');
 @import '@mdi/font/css/materialdesignicons.css';
