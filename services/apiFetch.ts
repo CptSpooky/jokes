@@ -1,5 +1,5 @@
 /**
- * @description We can define our base configs for API calls here.
+ * @description We can define our base configs for API calls here, then inject them in the apis.ts plugin.
 */
 
 import { useRuntimeConfig } from '#app'

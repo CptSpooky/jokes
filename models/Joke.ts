@@ -13,11 +13,19 @@ export class Joke {
   author: string;
   imgUrl: string;
 
-  constructor(data: RawJoke) {
-    this.id = data.id || crypto.randomUUID();
-    this.name = data.name || 'Some Joke';
-    this.text = data.jokeText || '';
-    this.author = data.author || '';
-    this.imgUrl = data.url || 'https://picsum.photos/200/300'; // Example URL, adjust as needed
+  constructor(data: RawJoke | Joke | null) {
+    const isRaw = data && 'jokeText' in data;
+
+    this.id = data?.id || crypto.randomUUID();
+    this.name = data?.name || '';
+    this.text = isRaw ? (data as RawJoke).jokeText : (data as Joke)?.text || '';
+    this.author = data?.author || '';
+    this.imgUrl = isRaw
+    ? (data as RawJoke).url
+    : (data as Joke)?.imgUrl || 'https://picsum.photos/200/300';
+  }
+
+  static from(data: RawJoke | Joke | null): Joke {
+    return new Joke(data);
   }
 }
