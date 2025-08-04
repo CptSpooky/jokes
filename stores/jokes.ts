@@ -8,7 +8,8 @@ export const useJokesStore = defineStore('jokes', {
     selectedJoke: null as Joke | null,
     loading: true as boolean,
     dialog: false as boolean,
-    action: '' as string, // 'add' or 'edit'
+    action: '' as string, // 'add' or 'edit',
+    count: 3 as number
   }),
 
   getters: {
@@ -17,6 +18,7 @@ export const useJokesStore = defineStore('jokes', {
     getDialog: (state) => state.dialog,
     getSelectedJoke: (state) => state.selectedJoke,
     getAction: (state) => state.action,
+    getCount: (state) => state.jokes.length
   },
 
   actions: {
@@ -28,6 +30,7 @@ export const useJokesStore = defineStore('jokes', {
         const rawJokes: RawJoke[] = MockData;
         const jokes: Joke[] = rawJokes.map((joke: RawJoke) => new Joke(joke));
         this.jokes = jokes;
+        this.count = jokes.length;
       } catch (error) {
         console.error('Error fetching jokes:', error);
       } finally {
@@ -36,9 +39,13 @@ export const useJokesStore = defineStore('jokes', {
     },
     addJoke(joke: Joke) {
       this.jokes.push(joke);
+      this.count++;
     },
     removeJoke(jokeId: string) {
       this.jokes = this.jokes.filter(joke => joke.id !== jokeId);
+      if (this.count > 0) {
+        this.count--;
+      }
     },
     updateJoke(updatedJoke: Joke) {
       const index = this.jokes.findIndex(joke => joke.id === updatedJoke.id);

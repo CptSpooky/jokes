@@ -10,8 +10,10 @@
 
       </v-form>
       <template v-slot:actions>
-        <v-btn class="ms-auto" text="Cancel" @click="handleCancel()"></v-btn>
-        <v-btn class="ms-auto" text="Save Joke" @click="handleSave()"></v-btn>
+        <div class="d-flex justify-end ga-3">
+          <v-btn class="ms-auto" text="Cancel" @click="handleCancel()"></v-btn>
+          <v-btn class="ms-auto" text="Save Joke" color="deep-purple" variant="flat" @click="handleSave()"></v-btn>
+        </div>
       </template>
     </v-card>
   </v-dialog>

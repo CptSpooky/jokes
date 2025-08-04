@@ -1,7 +1,13 @@
 <template>
     <client-only>
         <v-card v-for="joke in jokes" :key="joke.id" class="mx-auto my-12" width="374" elevated>
-            <v-img height="250" :src="joke.imgUrl" alt="Joke Picture" :cover="true" />
+            <v-img height="250" alt="Joke Picture" :src="joke.imgUrl" :cover="true">
+                <template v-slot:placeholder>
+                    <v-row align="center" class="fill-height ma-0" justify="center">
+                        <v-progress-circular color="grey-lighten-5" indeterminate />
+                    </v-row>
+                </template>
+            </v-img>
             <v-card-item>
                 <v-card-title>{{ joke.name }}</v-card-title>
                 <v-card-subtitle>{{ joke.author }}</v-card-subtitle>
@@ -13,7 +19,7 @@
                 <v-btn icon variant="tonal" color="deep-purple-lighten-2" @click="handleEdit(joke, 'edit')">
                     <v-icon>mdi-pencil</v-icon>
                 </v-btn>
-                <v-btn icon variant="tonal" color="deep-purple-lighten-2" @click="removeJoke(joke.id)">
+                <v-btn icon variant="tonal" color="red-lighten-2" @click="removeJoke(joke.id)">
                     <v-icon>mdi-delete-outline</v-icon>
                 </v-btn>
             </v-card-actions>
@@ -33,5 +39,4 @@ async function handleEdit(joke: Joke, action: string) {
     await setSelectedJoke(joke);
     toggleDialog();
 }
-
 </script>

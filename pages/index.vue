@@ -16,7 +16,7 @@
 
         <!-- Loading Skeleton Grid -->
         <v-row v-if="loading" dense>
-            <v-col v-for="n in 6" :key="n" cols="12" sm="6" md="4">
+            <v-col v-for="n in count" :key="n" cols="12" sm="6" md="4">
                 <v-skeleton-loader type="card" />
             </v-col>
         </v-row>
@@ -40,8 +40,6 @@
                 <JokeDialog />
             </v-col>
         </v-row>
-
-
     </v-container>
 </template>
 
@@ -54,7 +52,7 @@ import JokeDialog from '@/components/JokeDialog.vue';
 import Pug from '@/assets/images/pug.webp';
 
 const jokesStore = useJokesStore();
-const { jokes, loading } = storeToRefs(jokesStore);
+const { jokes, loading, count } = storeToRefs(jokesStore);
 const { fetchJokes, toggleDialog, setAction } = jokesStore;
 
 onMounted(async () => {
