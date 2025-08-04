@@ -45,7 +45,7 @@
     </v-container>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { onMounted } from 'vue';
 import { useJokesStore } from '@/stores/jokes';
 import { storeToRefs } from 'pinia';

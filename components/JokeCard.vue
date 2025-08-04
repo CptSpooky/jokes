@@ -21,12 +21,14 @@
     </client-only>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { Joke } from '@/models/Joke';
+import { useJokesStore } from '@/stores/jokes';
 const jokesStore = useJokesStore();
 const { jokes } = storeToRefs(jokesStore);
 const { removeJoke, setSelectedJoke, toggleDialog, setAction } = jokesStore;
 
-async function handleEdit(joke, action) {
+async function handleEdit(joke: Joke, action: string) {
     setAction(action);
     await setSelectedJoke(joke);
     toggleDialog();

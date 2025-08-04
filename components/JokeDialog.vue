@@ -19,6 +19,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useJokesStore } from '@/stores/jokes';
 import { Joke } from '@/models/Joke';
 import type { VForm } from 'vuetify/components'
 
