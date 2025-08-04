@@ -24,7 +24,7 @@ export const useUsersStore = defineStore('users', {
       try {
         const { $apiFetch } = useNuxtApp();
         const apiFetch = $apiFetch as ApiFetchType;
-        const { results }: { results: RawUser[] }  = await apiFetch('/?results=10');
+        const { results }: { results: RawUser[] } = await apiFetch('/?results=10');
         const users: User[] = results.map((user: RawUser) => new User(user));
         this.users = users;
         console.log('Fetched users:', users);
@@ -36,4 +36,3 @@ export const useUsersStore = defineStore('users', {
     }
   },
 });
-  

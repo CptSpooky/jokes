@@ -1,20 +1,20 @@
 export interface RawUser {
-    id: {
-        name: string;
-        value: string;
-    };
-    name: {
-        first: string;
-        last: string;
-        title: string;
-    };
-    email: string;
-    phone: string;
-    picture: {
-        large: string;
-        medium: string;
-        thumbnail: string;
-    };
+  id: {
+    name: string;
+    value: string;
+  };
+  name: {
+    first: string;
+    last: string;
+    title: string;
+  };
+  email: string;
+  phone: string;
+  picture: {
+    large: string;
+    medium: string;
+    thumbnail: string;
+  };
 }
 
 export class User {

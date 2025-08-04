@@ -1,9 +1,9 @@
 export interface RawJoke {
-    id: string;
-    name: string;
-    jokeText: string;
-    author: string;
-    url: string;
+  id: string;
+  name: string;
+  jokeText: string;
+  author: string;
+  url: string;
 }
 
 export class Joke {
@@ -21,8 +21,8 @@ export class Joke {
     this.text = isRaw ? (data as RawJoke).jokeText : (data as Joke)?.text || '';
     this.author = data?.author || '';
     this.imgUrl = isRaw
-    ? (data as RawJoke).url
-    : (data as Joke)?.imgUrl || 'https://picsum.photos/200/300';
+      ? (data as RawJoke).url
+      : (data as Joke)?.imgUrl || 'https://picsum.photos/200/300';
   }
 
   static from(data: RawJoke | Joke | null): Joke {

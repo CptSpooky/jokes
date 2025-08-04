@@ -1,6 +1,5 @@
 import { Joke } from '@/models/Joke';
 import type { RawJoke } from '@/models/Joke';
-import type { ApiFetchType } from '@/services/apiFetch';
 import MockData from '@/assets/mockdata.json'; // Assuming you have a mock data file
 
 export const useJokesStore = defineStore('jokes', {
@@ -58,4 +57,3 @@ export const useJokesStore = defineStore('jokes', {
     }
   },
 });
-  
