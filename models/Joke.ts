@@ -30,6 +30,6 @@ export class Joke {
   }
 
   randomizeImage(): string {
-    return `https://picsum.photos/600/900?image=${Math.floor(Math.random() * 10) + 1 * 5 + 10}`;
+    return `https://picsum.photos/400/700?image=${Math.floor(Math.random() * 10) + 1 * 5 + 10}`;
   }
 }

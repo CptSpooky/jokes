@@ -8,7 +8,7 @@
         </v-row>
         <v-row class="my-4">
             <v-col cols="12" class="text-center">
-                <v-btn color="deep-purple-lighten-2" variant="tonal" @click="handleAddJoke()">
+                <v-btn color="primary" variant="tonal" @click="handleAddJoke()">
                     Add a Joke
                 </v-btn>
             </v-col>
@@ -47,8 +47,8 @@
 import { onMounted } from 'vue';
 import { useJokesStore } from '@/stores/jokes';
 import { storeToRefs } from 'pinia';
-import JokeCard from '@/components/JokeCard.vue';
-import JokeDialog from '@/components/JokeDialog.vue';
+import JokeCard from '@/components/jokes/JokeCard.vue';
+import JokeDialog from '@/components/jokes/JokeDialog.vue';
 import Pug from '@/assets/images/pug.webp';
 
 const jokesStore = useJokesStore();

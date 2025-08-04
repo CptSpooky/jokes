@@ -4,20 +4,20 @@
         "name": "Funny Joke",
         "jokeText": "I'm tired of following my dreams. I'm just going to ask them where they are going and meet up with them later.",
         "author": "cptspooky",
-        "url": "https://picsum.photos/600/900?random=1.webp"
+        "url": "https://picsum.photos/400/700?random=1"
     },
     {
         "id": "2ac4",
         "name": "Tech Joke",
         "jokeText": "I told my computer I needed a break, and now it won't stop sending me beach wallpapers.",
         "author": "cptspooky",
-        "url": "https://picsum.photos/600/900?random=2.webp"
+        "url": "https://picsum.photos/400/700?random=2"
     },
     {
         "id": "34c5",
         "name": "Science Joke",
         "jokeText": "Why don't scientists trust atoms? Because they make up everything!",
         "author": "cptspooky",
-        "url": "https://picsum.photos/600/900?random=3.webp"
+        "url": "https://picsum.photos/400/700?random=3"
     }
 ]

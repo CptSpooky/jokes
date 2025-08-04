@@ -1,34 +1,32 @@
 import { User } from '@/models/User';
 import type { RawUser } from '@/models/User';
-import type { ApiFetchType } from '@/services/apiFetch';
+import { useApis } from '#imports';
 
 export const useUsersStore = defineStore('users', {
   state: () => ({
-    counter: 0,
     users: [] as User[],
-    loading: false
+    loading: false as boolean,
+    errorMessage: '' as string | null
   }),
 
   getters: {
-    getCounter: (state) => state.counter,
     getUsers: (state) => state.users,
-    getLoading: (state) => state.loading
+    getLoading: (state) => state.loading,
+    getErrorMessage: (state) => state.errorMessage
   },
 
   actions: {
-    increment() {
-      this.counter++;
-    },
     async fetchUsers() {
       this.loading = true;
+      this.errorMessage = null;
       try {
-        const { $apiFetch } = useNuxtApp();
-        const apiFetch = $apiFetch as ApiFetchType;
-        const { results }: { results: RawUser[] } = await apiFetch('/?results=10');
+        const { experienceApi } = useApis();
+        const { results }: { results: RawUser[] } = await experienceApi.get('/?results=10');
         const users: User[] = results.map((user: RawUser) => new User(user));
         this.users = users;
         console.log('Fetched users:', users);
-      } catch (error) {
+      } catch (error: any) {
+        this.errorMessage = this.errorMessage = error?.message ?? 'Something went wrong';
         console.error('Error fetching users:', error);
       } finally {
         this.loading = false;

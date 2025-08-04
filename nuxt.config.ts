@@ -11,7 +11,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      ApiUrl: process.env.NUXT_API_URL ?? 'https://api.example.com'
+      ExperienceApiUrl: process.env.NUXT_EXPERIENCE_API_URL,
+      AuthApiUrl: process.env.NUXT_AUTH_API_URL
     }
   },
 

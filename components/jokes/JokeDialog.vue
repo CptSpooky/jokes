@@ -1,7 +1,6 @@
 <template>
   <v-dialog v-model="dialog" width="auto">
-    <v-card width="400" prepend-icon="mdi-emoticon-happy-outline"
-      text="If you can't make it funny at least make it cringe."
+    <v-card width="400" prepend-icon="mdi-emoticon-happy-outline" text="If you can't make it funny make it cringe!"
       :title="action === 'edit' ? 'Edit Joke' : 'Add a Joke'">
       <v-form ref="jokeform" class="pa-4">
         <v-text-field v-model="newJoke.name" :counter="10" :rules="nameRules" label="Name" required />

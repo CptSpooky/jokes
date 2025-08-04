@@ -2,6 +2,11 @@ import { Joke } from '@/models/Joke';
 import type { RawJoke } from '@/models/Joke';
 import MockData from '@/assets/mockdata.json'; // Assuming you have a mock data file
 
+// if we wanted to use a state from another store, we could import it in an action
+// import { useUsersStore } from '@/stores/users';
+// const usersStore = useUsersStore();
+// const { getUsers } = usersStore; or usersStore.users 
+
 export const useJokesStore = defineStore('jokes', {
   state: () => ({
     jokes: [] as Joke[],
