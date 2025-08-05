@@ -1,11 +1,6 @@
 <template>
   <v-container>
     <v-row class="my-4">
-      <v-col cols="12" class="text-center">
-        <v-btn color="deep-purple-lighten-2" variant="tonal" @click="() => $router.push('/')">
-          Back to Jokes
-        </v-btn>
-      </v-col>
       <v-col cols="12">
         <h1 class="text-center">Just users</h1>
         <p class="text-center">We're testing them api injections</p>

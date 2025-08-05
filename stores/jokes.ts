@@ -46,7 +46,8 @@ export const useJokesStore = defineStore('jokes', {
       this.jokes.push(joke);
       this.count++;
     },
-    removeJoke(jokeId: string) {
+    removeJoke(jokeId: string | null) {
+      if (!jokeId) return;
       this.jokes = this.jokes.filter(joke => joke.id !== jokeId);
       if (this.count > 0) {
         this.count--;
@@ -61,7 +62,7 @@ export const useJokesStore = defineStore('jokes', {
     toggleDialog() {
       this.dialog = !this.dialog;
     },
-    async setSelectedJoke(joke: Joke | null) {
+    setSelectedJoke(joke: Joke | null) {
       this.selectedJoke = joke;
     },
     setAction(action: string) {
